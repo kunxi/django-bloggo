@@ -1,0 +1,4 @@
+from django.utils.decorators import decorator_from_middleware
+import context_processors 
+
+require_siteconf = decorator_from_middleware(context_processors.require_siteconf)
