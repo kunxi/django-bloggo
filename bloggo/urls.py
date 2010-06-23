@@ -10,7 +10,7 @@ feeds = {
 
 urlpatterns = patterns('',
     (r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict' : feeds}),
-    url(r'siteconf', view=tests.siteconf_view, name='test_siteconf'),
+    url(r'siteconfig', view=tests.siteconfig_view, name='test_siteconfig'),
     (r'', include('basic.blog.urls')),
 )
 

@@ -8,7 +8,9 @@ import bloggo
 
 def initial_siteconf(*args, **kwargs):
     print 'Initialize site configuration'
-    siteconfig = SiteConfiguration(site=Site.objects.get_current(), version=bloggo.__version__)
-    siteconfig.save()
+
+    siteconfig, created = SiteConfiguration.objects.get_or_create(site=Site.objects.get_current(), version=bloggo.__version__)
+    if created:
+        x = siteconfig.save()
 
 post_syncdb.connect(initial_siteconf, sender=site_app)
