@@ -1,0 +1,1 @@
+[{"pk": 1, "model": "siteconfig.siteconfiguration", "fields": {"version": "0.1.0", "site": 1, "settings": "{\"blogname\": \"My Blog\", \"blogdescription\": \"Yet another blog.\"}"}}]
