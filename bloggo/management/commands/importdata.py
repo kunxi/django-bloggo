@@ -14,8 +14,8 @@ class Command(BaseCommand):
             help='Import the pingbacks.'),
         make_option(None, '--without-pingback', action="store_false", dest='keep_pingback',
             help='Do not import the pingbacks.'),
-        make_option('-m', '--markup', default="wordpress", dest='markup', 
-            help='Which markup is used, default is wordpress.'),
+        make_option('-m', '--markup', default="wpmarkup", dest='markup', 
+            help='Which markup is used, default is wpmarkup, note: you need to install wpmarkup.'),
         make_option('-f', '--from', default='wordpress', dest='other_blog',
             help='Blog system to import, default is wordpress.'),
         )
@@ -170,7 +170,7 @@ class Command(BaseCommand):
                                 content_type=ContentType.objects.get_for_model(p), 
                                 object_pk=p._get_pk_val(), site=site,
                                 user_name=user_name,user_email=user_email, user_url=user_url, 
-                                comment=comment_content,    submit_date=submit_date, ip_address=ip_address, 
+                                comment=comment_content, submit_date=submit_date, ip_address=ip_address, 
                                 is_public=is_public, is_removed=is_removed)
                         if created:
                             c.save()
